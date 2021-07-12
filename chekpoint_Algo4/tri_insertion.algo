@@ -1,0 +1,15 @@
+PROCEDURE tri_insertion(tab : ARRAY_OF INTEGER[1..100];)
+VAR
+    i,n,tmp : INTEGER
+BEGIN
+    Read(n)
+    FOR i FROM 1 TO n-1 STEP 1  DO
+        tmp := tab[i] ;    // tmp : key temporary
+        //sequentiel reseache  of position of insertion and shift
+        WHILE ((i>0) && (tab[i-1]>tmp)) DO
+            tab[i] := tab[i-1] ;  // shift
+            i := i-1 ;
+        END_WHILE
+        tab[i] := tmp ;     //insertion
+    END_FOR
+END
